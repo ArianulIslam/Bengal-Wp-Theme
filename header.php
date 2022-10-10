@@ -41,7 +41,16 @@
 
 <body <?php body_class('theme-bengal'); ?>>
 
-<?php wp_body_open(); ?>
+<?php 
+  
+  if(function_exists(('wp_body_open()'))){
+    
+    wp_body_open(); 
+
+  }
+
+
+?>
 
     <!-  || HEADER START  -->
     <header class="header-1 py-5 ">
