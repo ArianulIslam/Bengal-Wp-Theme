@@ -1,0 +1,27 @@
+// Colors
+
+$color-primary: #396cf0;
+$color-primary-1: #144cdd;
+$color-secondary: #e12454;
+$color-tertiary: #00c5ff;
+$color-dark: #363636;
+$color-darker: #202020;
+$color-darkest: #000000;
+$color-dark-1: #606060;
+$color-dark-2: #707070;
+$color-dark-2a: #7070701f;
+$color-light: #ffffff;
+$color-light-1: #fafafa;
+$color-light-2: #f3f8fc;
+$color-light-3: #f6ffff;
+
+body {
+  color: $color-dark-2;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $color-dark;
+}

@@ -1,0 +1,1270 @@
+/*
+  Theme Name: Medidol healthcare and medical HTML5 Template
+  Description: Creative HTML5 template
+  Version: 1.0;
+*/
+
+/*
+--------------------------
+Pages...
+
+1.Homepage-1
+2.Homepage-2
+3.Homepage-3
+4.Homepage-4
+4.Homepage-5
+5.Doctors
+6.Doctor Profile
+7.About
+8.Deparments
+9.Blog
+10.Single Blog
+9.Time Table
+9.Contact
+
+---------------------------
+*/
+
+@import "reset";
+@import "default";
+@import "header2";
+@import "breakpoint";
+@import "generator";
+@import "components";
+
+::-moz-selection {
+  background: $color-secondary;
+  color: $color-light;
+  text-shadow: none;
+}
+::selection {
+  background: $color-secondary;
+  color: $color-light;
+  text-shadow: none;
+}
+.title-2 {
+  font-family: $font-secondary;
+}
+
+//----------------------- HOME VERSION 2  -----------------------------
+
+// BANNER START
+.banner-1 {
+  background-image: url("../images/home-v2/banner/1.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 910px;
+  display: flex;
+  align-items: flex-start;
+  background-color: $color-secondary;
+  position: relative;
+  flex-direction: column;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0) 0%,
+      #e12454a8 75%
+    );
+    opacity: 0.5;
+
+    @include md {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        270deg,
+        rgba(255, 255, 255, 0) 0%,
+        #e12454a8 20%
+      );
+    }
+  }
+  @include lg {
+    justify-content: center;
+    height: 800px;
+  }
+
+  @include md {
+    height: 500px;
+    justify-content: center;
+  }
+
+  .banner-1__content {
+    position: relative;
+    z-index: 11;
+    padding-top: 20%;
+    @include lg {
+      padding-top: 50%;
+    }
+    @include lg {
+      padding-top: unset;
+    }
+    @include sm {
+      padding-top: unset;
+      padding: 6rem 0;
+    }
+    &--heading {
+      font-size: 7.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $color-light;
+      // margin: 30px 0;
+      font-family: $font-primary;
+      @include xl {
+        font-size: 6rem;
+      }
+      @include lg {
+        font-size: 4rem;
+      }
+      @include md {
+        font-size: 3.5rem;
+      }
+      @include sm {
+        font-size: 3.2rem !important;
+      }
+    }
+    &--span {
+      color: $color-secondary;
+    }
+
+    &--para {
+      color: $color-light;
+      text-transform: capitalize;
+      line-height: 1.5;
+      width: 80%;
+      max-width: 500px;
+      margin-top: 3rem;
+    }
+  }
+}
+// BANNER END
+
+// TAG BANNER START
+.tag__banner {
+  position: relative;
+  // background-image: url("../images/home-v2/banner/2.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #faf7ff;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  // background-color: transparent;
+  clip-path: ellipse(80% 90% at 50% 90%);
+  margin-top: -10rem;
+  @include lg {
+    // min-height: 90vh;
+    clip-path: unset;
+  }
+  @include lg {
+    margin-top: unset;
+    height: auto;
+    padding: 6rem 0;
+  }
+  .services__tag {
+    width: 100%;
+  }
+  .services__tag__row {
+    --bs-gutter-x: 2.8rem;
+    row-gap: 2rem;
+    @include sm {
+      row-gap: 6rem;
+    }
+  }
+  .services__tag__box {
+    padding: 4rem 1rem;
+    background-color: $color-light;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    height: 240px;
+    box-shadow: 2px 2px 5px #00000008;
+    &:hover {
+      background-color: $color-primary !important;
+      color: $color-light;
+    }
+    &:hover h3,
+    &:hover svg {
+      color: $color-light !important;
+    }
+  }
+  .services__tag__content {
+    h3 {
+      color: #16407e;
+      margin: 3rem 0 2rem 0;
+      font-family: $font-primary;
+      white-space: nowrap;
+      @include xl {
+        font-size: 2rem;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      width: 92%;
+      line-height: 1.5;
+      margin: 0 auto;
+    }
+  }
+  .services__tag__icon {
+    svg {
+      font-size: 5rem;
+      color: $color-dark;
+    }
+  }
+}
+
+// TAG BANNER END
+
+// DEPARTMENT SERVICES START
+.services__department {
+  padding: 10rem 0;
+  @include sm {
+    padding: 6rem 0;
+  }
+  .slider-3 {
+    margin-top: 4rem;
+    .slider__box {
+      box-shadow: 0px 0px 4px #00000010;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      overflow: hidden;
+      .slider__box__img img {
+        width: 100%;
+        // max-height: 175px;
+      }
+      .slider__box__content {
+        padding: 2rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background: linear-gradient(135deg, #1c2763 0%, #144cdd 100%);
+          z-index: -1;
+          clip-path: circle(14.3% at 100% 100%);
+          transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        &:hover::before {
+          clip-path: circle(100%);
+
+          background: linear-gradient(135deg, #1c2763 0%, #144cdd 100%);
+        }
+        &:hover > * {
+          color: $color-light;
+        }
+
+        &:hover .slider__box__content h5 {
+          color: $color-light;
+        }
+        h5 {
+          color: #16407e;
+        }
+        p {
+          width: 80%;
+          margin: 0 auto;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+// DEPARTMENT SERVICES END
+
+//  SPACIAL FACILITIES START
+.special__facilities {
+  padding: 10rem 0;
+  background-image: url("../images/home-v2/banner/3.png");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 9;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      193deg,
+      rgba(255, 255, 255, 0) 8%,
+      rgb(242, 242, 243) 51%
+    );
+    z-index: -1;
+    opacity: 0.8;
+  }
+  @include sm {
+    padding: 6rem 0;
+  }
+  .section_heading {
+    .title-2 {
+      text-align: left !important;
+      @include md {
+        text-align: center !important;
+      }
+    }
+    .heading-1 {
+      text-align: left !important;
+      border-bottom: 2px solid $color-dark-2a;
+      @include md {
+        text-align: center !important;
+      }
+    }
+  }
+  .special__facilities__row {
+    margin-top: 5rem;
+    row-gap: 4rem;
+  }
+  .facilities__box {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    @include lg {
+      align-items: center;
+      text-align: center;
+    }
+    .facilities__img img {
+      height: 80px;
+    }
+    h3 {
+      font-family: $font-secondary;
+      color: $color-dark;
+      font-weight: 600;
+    }
+    p {
+      width: 70%;
+      font-size: 1.4rem;
+      color: $color-dark-2;
+    }
+    svg {
+      padding: 0.5rem;
+      color: #cac9c9;
+      border-radius: 3rem;
+      border: 2px solid #cac9c9;
+      width: fit-content;
+      font-weight: 900;
+    }
+  }
+  .btn-1 {
+    background-color: $color-light;
+    color: $color-dark-2;
+    box-shadow: 0px 5px 15px #00000020;
+    margin-top: 5rem;
+    .btn__icon {
+      background: $color-primary;
+      color: $color-light;
+    }
+    &:hover {
+      color: $color-light !important;
+      background-color: $color-primary;
+    }
+  }
+}
+//  SPACIAL FACILITIES END
+
+// CONTACT BANNER START
+.contact__banner {
+  padding: 10rem 0;
+  background-color: $color-primary;
+  color: $color-light;
+  @include sm {
+    padding: 6rem 0;
+  }
+  .section_heading {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    @include sm {
+      gap: unset;
+    }
+    h3 {
+      color: $color-light;
+    }
+    a {
+      color: $color-light;
+      white-space: unset !important;
+    }
+  }
+  .btn-1 {
+    background-color: $color-light;
+    color: $color-dark-2;
+    box-shadow: 0px 0.5rem 1.5rem #00000020;
+    margin-top: 4rem;
+    .btn__icon {
+      background: $color-primary;
+      color: $color-light;
+    }
+  }
+}
+// CONTACT BANNER END
+
+// ABOUT START
+.about__us {
+  background-image: url("../images/call2action/2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  padding: 10rem 0;
+  position: relative;
+  z-index: 999;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0) 27%,
+      rgb(242, 242, 243) 63%
+    );
+    z-index: -1;
+    // opacity: 0.8;
+  }
+  @include sm {
+    background-position: 85%;
+    padding: 6rem 0;
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #f3f8fcbd;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  .about__us__row {
+    height: 100%;
+    align-items: center;
+    .about__us__col {
+      align-items: center;
+
+      .about__us__content {
+        .title-3 {
+          text-align: left;
+          color: $color-dark-2;
+          font-weight: 500;
+        }
+        .heading-2 {
+          padding: 2rem 0;
+          text-align: left;
+          color: $color-dark;
+          font-weight: 600;
+          font-size: 3.5rem;
+        }
+        .about__us__content__key {
+          &:not(:last-child) {
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+          }
+
+          border-radius: 1.5rem;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+          padding: 1rem 1.5rem;
+          &:hover {
+            color: $color-light !important;
+            background-color: $color-primary !important;
+          }
+          &:hover .content__key__title {
+            color: $color-light !important;
+          }
+          &:hover .content__key__icon {
+            color: $color-primary !important;
+            background-color: $color-light;
+          }
+          &:hover .content__key__para {
+            color: $color-light !important;
+          }
+          .content__key__heading {
+            @include sm {
+              justify-content: start;
+            }
+            .content__key__icon {
+              padding: 0.5rem;
+              border: 1px solid;
+              color: $color-primary;
+              border: 1px solid $color-dark-2a;
+              border-radius: 2rem;
+              font-size: 1.6rem;
+              font-weight: 900;
+              margin-right: 0.5rem;
+            }
+
+            .content__key__title {
+              font-family: $font-secondary;
+              font-weight: 500;
+              font-size: 2.3rem !important;
+              text-transform: capitalize;
+              color: $color-dark;
+              text-align: left;
+            }
+          }
+          .content__key__para {
+            color: $color-dark-2;
+            line-height: 1.7;
+          }
+        }
+      }
+      .btn-1 {
+        margin-left: 0;
+        margin-top: 3rem !important;
+      }
+    }
+  }
+}
+
+// ABOUT END
+
+// OUR SPECIALIST DOCTORS START
+.doctors__slide {
+  padding: 10rem 0;
+  @include sm {
+    padding: 6rem 0 !important;
+  }
+  .row {
+    row-gap: 3rem;
+    --bs-gutter-x: 2.5rem;
+  }
+  .slide__box__single {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+
+    .doctor-img {
+      position: relative;
+
+      img {
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+    .doc-img-1 {
+      background-image: url("../images/doctors/5.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .doc-img-2 {
+      background-image: url("../images/doctors/6.png") !important;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .doc-img-3 {
+      background-image: url("../images/doctors/7.png") !important;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .doc-img-4 {
+      background-image: url("../images/doctors/8.png") !important;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .doc-img-tag {
+      position: absolute;
+      bottom: 1rem;
+      right: 50%;
+      font-size: 1.3rem;
+      font-weight: 300;
+      transform: translateX(50%);
+      color: $color-light;
+    }
+    .doctor__details {
+      h3 {
+        font-size: 2rem;
+        font-family: $font-primary;
+        text-transform: capitalize;
+        margin: 4rem 0 1rem 0;
+        font-weight: bold;
+      }
+    }
+    .doctor__details__btn {
+      margin-top: 2rem;
+      background-color: $color-light;
+      // color: $color-primary;
+
+      &:hover {
+        background-color: $color-primary;
+        color: $color-light;
+      }
+    }
+  }
+}
+
+// OUR SPECIALIST DOCTORS END
+
+// SUCCESS COUNTER START
+.success__counter {
+  .success__counter__top {
+    background-image: url("../images/success/1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 45rem;
+    padding-top: 10rem;
+    text-align: center;
+    position: relative;
+    z-index: -9;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1613a4;
+      opacity: 0.45;
+      z-index: -1;
+    }
+    @include sm {
+      padding-top: 6rem;
+      min-height: 35rem;
+    }
+    .heading-2 {
+      font-size: 4rem;
+    }
+  }
+  .success__counter__main {
+    margin-top: -13rem;
+    padding-bottom: 10rem;
+    // padding-right: 0;
+    // padding-left: 0;
+    @include sm {
+      padding-bottom: 6rem !important;
+    }
+    @include sm {
+      margin-top: -9rem;
+    }
+    .counter__row {
+      row-gap: 3rem;
+      --bs-gutter-x: 2.5rem;
+      @include sm {
+        row-gap: 1.5rem;
+        --bs-gutter-x: 1.5rem;
+      }
+      .counter__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 3rem 0;
+        width: 100% !important;
+        margin: 0 auto;
+        background: $color-light;
+        box-shadow: 0px 0px 40px #00000008;
+        .counter__icon {
+          font-size: 4rem;
+          width: 4rem;
+          background: $color-primary;
+          border-radius: 5rem;
+          padding: 2rem;
+          color: $color-light;
+          margin-bottom: 2rem;
+          @include sm {
+            font-size: 2rem;
+            width: 2rem;
+            padding: 2rem;
+          }
+        }
+        .counter__content {
+          .count__number {
+            color: $color-dark-2;
+            font-weight: 500;
+            margin-bottom: 2rem !important;
+            .count {
+              font-size: 1.8rem !important;
+            }
+          }
+          .counter__title {
+            color: $color-dark-2;
+            font-weight: 500;
+            font-family: $font-secondary;
+          }
+        }
+      }
+    }
+  }
+}
+// SUCCESS COUNTER END
+
+// CALL2ACTION START
+.call2action {
+  padding: 10rem 0;
+  @include sm {
+    padding: 6rem 0 !important;
+  }
+  background-image: url("../images/home-v2/banner/4.png") !important;
+  color: $color-light;
+  position: relative;
+  z-index: 9;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #295cc5;
+    opacity: 0.78;
+    z-index: -1;
+  }
+  .about__us__row {
+    height: 100%;
+    align-items: flex-start;
+    @include md {
+      flex-direction: column-reverse !important;
+      row-gap: 4rem;
+    }
+    .about__us__col {
+      align-items: center;
+      .about__us__content {
+        .title-3 {
+          color: $color-light;
+          font-weight: 400;
+          font-size: 1.5rem !important;
+          @include md {
+            text-align: center;
+          }
+        }
+        .heading-2 {
+          color: $color-light;
+          font-weight: 500;
+          margin-top: 3rem;
+          @include md {
+            text-align: center;
+          }
+        }
+        .about__us__content__key {
+          @include md {
+            text-align: center;
+          }
+          &:not(:last-child) {
+            margin-bottom: 3rem;
+            margin-top: 2rem;
+          }
+          padding-bottom: 0.8rem;
+          border-bottom: 1px solid #ffffff5c;
+
+          .content__key__heading {
+            @include md {
+              flex-direction: column;
+            }
+
+            .content__key__icon {
+              padding: 1rem 0.5rem;
+              width: 2rem;
+              border: 1px solid;
+              color: #ffffff;
+              border-radius: 2rem;
+              font-size: 1rem;
+              font-weight: 900;
+              margin-right: 0.8rem;
+              background-color: #396cf0;
+            }
+
+            .content__key__title {
+              font-size: 1.6rem !important;
+              font-family: $font-secondary;
+              font-weight: 500;
+              text-transform: uppercase;
+              color: $color-light;
+            }
+          }
+          .content__key__para {
+            color: $color-light;
+            line-height: 1.7;
+            font-weight: 300;
+            font-size: 1.5rem;
+            @include md {
+              text-align: center;
+            }
+          }
+        }
+        .btn-1 {
+          margin-left: 0;
+          margin-top: 3rem;
+        }
+      }
+    }
+    .video__block {
+      background: $color-light;
+      max-width: 460px;
+      padding: 4rem 5rem;
+      margin-left: auto;
+      @include sm {
+        padding: 3rem;
+      }
+      img {
+        margin: 0 auto;
+        outline: 15px solid $color-primary;
+        border-radius: 30rem;
+      }
+      p {
+        color: $color-primary-1;
+        font-weight: 500;
+      }
+      .video__icon {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        padding: 2rem;
+        border-radius: 50%;
+        background-color: $color-primary;
+      }
+    }
+  }
+}
+// CALL2ACTION END
+
+// GALLERY START
+.gallery {
+  padding: 10rem 0;
+  background-image: url("../images/gallery/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 9;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+    opacity: 0.98;
+    z-index: -1;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url(../images/gallery/bg2.png);
+    top: 25%;
+    right: -40px;
+    width: 336px;
+    height: 43%;
+    max-width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 144%;
+    opacity: 0.1;
+  }
+  @include sm {
+    padding: 6rem 0 !important;
+  }
+  .button-group {
+    justify-content: unset;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    button {
+      width: 15%;
+      min-width: fit-content;
+      @include md {
+        padding: 1.6rem 2rem;
+      }
+      @include sm {
+        width: 48%;
+      }
+    }
+    @include sm {
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    .transparent-btn-1 {
+      &:hover {
+        background-color: $color-primary;
+        color: $color-light;
+      }
+    }
+  }
+  .gallery__content {
+    .gallery__para {
+      line-height: 1.8;
+      color: $color-dark-2;
+    }
+  }
+
+  .patient__image {
+    @include md {
+      width: 100%;
+    }
+  }
+  .gallery__img {
+    @include md {
+      margin-top: 1rem !important;
+    }
+  }
+  .para__bg {
+    background-color: $color-primary;
+    color: $color-light;
+  }
+  .para__border {
+    border-left: 3px solid $color-primary;
+  }
+}
+// GALLERY END
+
+//BLOG START
+.blog {
+  background-color: $color-light;
+  box-shadow: 3px 3px 20px #00000005;
+  padding: 10rem 0;
+  @include sm {
+    padding: 6rem 0;
+  }
+  .section_heading {
+    margin-bottom: 4rem;
+  }
+
+  row-gap: 3rem;
+  .blog__item {
+    box-shadow: 0px 0px 50px #00000008;
+    @include sm {
+      text-align: center;
+      padding: 0;
+    }
+    .blog__item__content {
+      padding: 2rem;
+      .blog__item__title {
+        font-family: $font-secondary;
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: $color-dark;
+        cursor: pointer;
+        @include sm {
+          font-size: 2rem;
+        }
+      }
+      .blog-info-2 {
+        background-color: $color-light;
+        color: $color-dark;
+        text-align: left;
+        border-bottom: 1px solid $color-dark-2a;
+        margin: 1rem 0;
+        :nth-child(1) {
+          border-right: unset;
+        }
+        @include sm {
+          text-align: center;
+        }
+      }
+      .blog__item__para {
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: $color-dark-2;
+        padding: 0 0 1.5rem 0;
+        line-height: 2;
+        @include sm {
+          font-size: 1.2rem;
+        }
+      }
+      .blog__link {
+        font-family: $font-secondary;
+        font-size: 1.4rem;
+        font-weight: 500;
+        &:hover {
+          color: $color-primary !important;
+        }
+      }
+    }
+  }
+}
+
+// BLOG END
+
+// TESTIMONIALS START
+.testimonial__slide {
+  padding: 10rem 0;
+  @include sm {
+    padding: 6rem 0;
+  }
+  .testimonials_block {
+    margin-top: 18rem;
+    --bs-gutter-x: 2.5rem;
+    row-gap: 3rem;
+    @include lg {
+      margin-top: 4rem;
+    }
+    @include sm {
+      margin-top: 1rem;
+    }
+  }
+  .swiper-wrapper {
+    height: auto;
+  }
+  .swiper__five {
+    margin-top: -16rem;
+    @include lg {
+      margin-top: unset;
+    }
+  }
+  .slide__box__single {
+    position: relative;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(180deg, $color-light 26%, $color-primary 26%);
+    cursor: pointer;
+    .slide__box__inner {
+      margin-top: unset;
+      text-align: center;
+      @include xs {
+        margin: 0 2rem 0 2rem;
+      }
+      .client__name {
+        font-weight: 400;
+      }
+      .client__tel {
+        color: $color-primary;
+        padding: 0.5rem 2rem;
+        background-color: $color-light;
+        border-radius: 3rem;
+      }
+    }
+  }
+  .doc__col {
+    margin: 0 auto;
+  }
+  .doc__contact {
+    padding: 2rem;
+    // border: 1px solid #e6e6e6;
+    box-shadow: 0px 0px 3px #00000010;
+    @include lg {
+      justify-content: center;
+    }
+    @include xs {
+      padding: 1rem;
+    }
+  }
+
+  .doc__details {
+    padding-left: 2rem;
+  }
+  .doc__details a {
+    color: $color-primary;
+    display: block;
+    line-height: 1.5;
+  }
+  .doc__details {
+    .name {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #a1a1a1 !important;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e6e6e6;
+      margin-bottom: 1rem;
+    }
+  }
+}
+// TESTIMONIALS END
+
+//  TAG-BANNER START
+.tag__banner__2 {
+  background: $color-light-2;
+  margin-top: unset !important;
+  min-height: unset;
+  clip-path: unset;
+  .f__width__banner__row {
+    --bs-gutter-x: 2.5rem;
+    row-gap: 2.5rem;
+    @include sm {
+      row-gap: 6rem;
+    }
+  }
+}
+//  TAG-BANNER END
+
+// BOOK APPOINTMENT START
+.contact__banner__v2 {
+  padding: 10rem 0;
+  background-image: url("../images/home-v2/banner/5.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 9;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #295cc5;
+    opacity: 0.85;
+    z-index: -1;
+  }
+  @include sm {
+    padding: 6rem 0;
+  }
+  .heading-1 {
+    padding-top: 0;
+    color: $color-light;
+  }
+}
+// BOOK APPOINTMENT END
+
+// FOOTER START
+.footer__two {
+  background-color: #1f1f1f;
+  color: #c7c7c7 !important;
+
+  .footer__logo h2 {
+    color: #ffffff !important;
+    margin-bottom: 2.8rem !important;
+  }
+  .footer__address p {
+    color: #c7c7c7 !important;
+  }
+
+  .footer__contact {
+    a {
+      color: #c7c7c7 !important;
+      &:hover {
+        color: $color-secondary !important;
+      }
+    }
+  }
+
+  .footer__list {
+    color: #c7c7c7 !important;
+
+    h3 {
+      color: #c7c7c7 !important;
+    }
+    li {
+      color: #c7c7c7 !important;
+      a {
+        color: #c7c7c7 !important;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .footer__icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    svg {
+      padding: 1rem;
+      background-color: $color-primary;
+      border-radius: 3rem;
+      color: $color-light;
+    }
+  }
+  .footer__contact a {
+    @include sm {
+      justify-content: center;
+    }
+  }
+}
+.footer__newsletter {
+  border-bottom: 1px solid #384697;
+  height: 100%;
+  background-color: #1c2763;
+  .social__icons__list {
+    display: flex;
+    gap: 2rem;
+
+    @include md {
+      justify-content: center;
+    }
+    &__item {
+      svg {
+        color: #ffffff;
+        width: 1.6rem;
+        background: #1f1b57;
+        padding: 1rem;
+        border-radius: 2rem;
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+  .newslwtter__input {
+    height: 100%;
+    white-space: nowrap;
+    margin-left: auto;
+    text-align: right;
+    @include md {
+      text-align: center;
+    }
+    @include xs {
+      white-space: unset !important;
+    }
+  }
+
+  .footer__top__input {
+    font-family: "Saira", sans-serif;
+    padding: 0.5rem 1.5rem;
+    height: 100%;
+
+    color: #202020;
+    background-color: #e7e7e7;
+    border-radius: 3rem;
+
+    @include xs {
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  .newslwtter__input button {
+    font-size: 1.6rem;
+    color: #c9c9c9;
+    font-family: "Saira", sans-serif;
+    border: 1px solid;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    margin-left: 1rem;
+    background-color: $color-secondary;
+    @include xs {
+      margin-top: 2rem;
+    }
+  }
+  .newsletter__row {
+    row-gap: 2rem;
+  }
+}
+
+// FOOTER END
+
+// COPYRIGHTS START
+.copyright {
+  padding: 3rem 0;
+  background-color: #1c2763;
+  text-align: center;
+  color: #c7c7c7;
+  font-family: $font-secondary;
+}
+// COPYRIGHTS END

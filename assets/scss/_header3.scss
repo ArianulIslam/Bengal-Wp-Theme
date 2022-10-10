@@ -1,0 +1,184 @@
+//  HEADER  START
+header {
+  background-color: $color-primary;
+  padding: 1.3rem 0;
+  @include md {
+    display: none;
+  }
+  .container__xl {
+    max-width: 150rem;
+    gap: 3rem;
+    .header__info__block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      p,
+      a {
+        color: $color-light;
+        font-size: 1.4rem;
+        font-family: $font-secondary;
+        &:hover {
+          color: $color-light !important;
+        }
+      }
+
+      svg {
+        color: $color-light;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+//  HEADER  END
+
+// NAVBAR START
+nav {
+  background-color: $color-light;
+  padding: 2.5rem 0;
+
+  .container__xl {
+    max-width: 150rem;
+  }
+  .navbar-nav {
+    width: 63%;
+    gap: 2rem;
+    @include xxl {
+      width: 67%;
+    }
+    @include lg {
+      width: unset;
+      margin-top: 3rem !important;
+      text-align: left;
+    }
+
+    .nav-item {
+      .nav-link {
+        font-family: inherit;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        // color: #808080 !important;
+        text-transform: capitalize;
+        &:hover {
+          color: $color-primary !important;
+        }
+      }
+    }
+  }
+
+  .navbar-form-search {
+    position: relative;
+    margin-right: 2rem !important;
+    @include lg {
+      text-align: left;
+      margin-top: 15px;
+      margin-right: 0 !important;
+    }
+
+    .form-control {
+      // max-width: 20rem;
+      // margin-left: auto;
+      padding-left: 3rem;
+      @include xl {
+        max-width: unset;
+      }
+    }
+    .btn {
+      border: 0;
+      background: transparent;
+      font-size: 18px;
+      &:active,
+      &:hover,
+      &:focus {
+        color: #000;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .search-form-container {
+      text-align: right;
+      position: absolute;
+      width: 300px;
+      overflow: hidden;
+      right: 0;
+      top: 0;
+      z-index: 9;
+      transition: all 0.3s ease-in-out;
+      @include xl {
+        top: 7rem;
+        right: 0;
+      }
+      &.hdn {
+        width: 0;
+      }
+      @include lg {
+        right: 0;
+        top: 0;
+        width: 100%;
+      }
+      @include sm {
+        // left: 50px;
+        top: 0;
+        width: 100%;
+      }
+
+      .search-input-group {
+        width: 200px;
+        display: flex;
+        margin-left: auto;
+        position: relative;
+        @include lg {
+          width: 300px;
+          margin: 0 auto;
+        }
+        @include sm {
+          width: 100%;
+        }
+
+        .btn-cancel {
+          position: absolute;
+          right: 0;
+        }
+        .btn-search {
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  svg {
+    color: #808080;
+  }
+
+  .dropdown-menu {
+    top: 58px !important;
+    @include lg {
+      top: unset !important;
+    }
+  }
+  .navbar-nav .dropdown-menu {
+    position: absolute !important;
+  }
+}
+// NAVBAR END
+
+.square__btn {
+  @include button-style(
+    $color-light,
+    2rem 4rem !important,
+    400,
+    1.4rem,
+    uppercase,
+    $color-primary,
+    none,
+    0.5rem,
+    inline-flex
+  );
+  font-family: $font-secondary;
+  @include lg {
+    display: none !important;
+  }
+}

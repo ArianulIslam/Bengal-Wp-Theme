@@ -1,0 +1,1466 @@
+/*
+  Theme Name: Medidol healthcare and medical HTML5 Template
+  Author: Debuggers Studio
+  Version: 1.0;
+*/
+
+/*
+--------------------------
+Pages...
+
+1.Homepage-1
+2.Homepage-2
+3.Homepage-3
+4.Homepage-4
+4.Homepage-5
+5.Doctors
+6.Doctor Profile
+7.About
+8.Deparments
+9.Blog
+10.Single Blog
+9.Time Table
+9.Contact
+
+---------------------------
+*/
+
+@import "reset";
+@import "default";
+@import "breakpoint";
+@import "generator";
+@import "components";
+@import "header3";
+
+::-moz-selection {
+  background: $color-secondary;
+  color: $color-light;
+  text-shadow: none;
+}
+::selection {
+  background: $color-secondary;
+  color: $color-light;
+  text-shadow: none;
+}
+
+//  HEADER  START
+header {
+  background-color: $color-light;
+  @include xl {
+    display: none;
+  }
+  .container__xl {
+    .header__info__block {
+      p {
+        color: $color-primary;
+        font-size: 1.4rem;
+        &:hover {
+          color: $color-primary !important;
+        }
+      }
+      a {
+        color: $color-primary;
+        font-size: 1.4rem;
+        font-family: $font-secondary;
+        &:hover {
+          color: $color-primary !important;
+        }
+      }
+      svg {
+        color: $color-primary;
+      }
+      a {
+        color: $color-primary;
+        font-size: 1.4rem;
+        font-family: $font-secondary;
+
+        &:hover {
+          color: $color-primary !important;
+        }
+      }
+    }
+  }
+}
+//  HEADER  END
+.navbar {
+  background-color: $color-primary;
+  padding: 2rem 0;
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: $color-light !important;
+
+        &:hover {
+          color: $color-light !important;
+        }
+      }
+    }
+  }
+  .navbar-toggler {
+    color: #ffffff63;
+    border-color: $color-light;
+    .navbar-toggler-icon {
+      background-image: unset;
+      svg {
+        color: $color-light;
+      }
+    }
+  }
+  .navbar-form-search .btn {
+    @include lg {
+      border: 0;
+      // background: #00000050;
+      font-size: 1.8rem;
+    }
+  }
+  svg {
+    color: $color-dark-2;
+  }
+  #search-button svg {
+    color: $color-light !important;
+  }
+
+  .square__btn {
+    @include button-style(
+      $color-primary,
+      1.5rem 3rem,
+      400,
+      1.4rem,
+      uppercase,
+      $color-light,
+      none,
+      none,
+      inline-flex
+    );
+  }
+}
+// BANNER START
+.banner {
+  background-image: url("../images/call2action/2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  padding: 10rem 0;
+  position: relative;
+  z-index: 999;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0) 19%,
+      rgb(242, 242, 243) 56%
+    );
+    z-index: -1;
+    // opacity: 0.8;
+  }
+  @include sm {
+    height: 100%;
+    padding: 6rem 0;
+  }
+  .banner__content {
+    text-align: left;
+    .banner__heading {
+      color: $color-dark;
+      text-transform: capitalize;
+      font-weight: 700;
+    }
+    .banner__para {
+      margin: 3rem 0;
+      width: 70%;
+      @include sm {
+        width: 100%;
+      }
+    }
+    .banner__button {
+      margin-top: unset;
+    }
+    .banner__button {
+      margin-top: 4rem;
+    }
+  }
+  .banner__tag {
+    text-align: left;
+    margin-top: 4rem;
+    display: flex;
+    gap: 2.5rem;
+    width: 100% !important;
+
+    @include sm {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      row-gap: 2rem;
+      gap: 2rem;
+    }
+    .tag {
+      background-color: $color-primary;
+      color: $color-light;
+      padding: 1.5rem;
+      text-align: center;
+      width: 15%;
+      min-width: 100px;
+      vertical-align: middle;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &:hover p {
+        color: $color-light !important;
+      }
+      p {
+        margin-top: 0.8rem;
+      }
+      @include sm {
+        aspect-ratio: 3/2;
+        width: 47%;
+      }
+      @include xs {
+        width: 45%;
+      }
+    }
+    // aspect-ratio: 6/3;
+    @include sm {
+      // width: 45%;
+      padding: 2rem 0rem;
+    }
+
+    svg {
+      color: $color-light;
+      font-size: 2.5rem;
+    }
+  }
+}
+
+// BANNER END
+
+//  APPONTMENT START
+.appointment {
+  position: relative;
+  z-index: 999;
+  .container__xl {
+    max-width: 167rem;
+    padding: 5% 7%;
+    margin-top: -10rem;
+    box-shadow: 3px 3px 1.5rem #00000020;
+    background-color: $color-light;
+    @include lg {
+      margin-top: -3rem;
+    }
+    @include md {
+      margin-top: 0;
+      padding: 6rem 2rem;
+    }
+    .inner__container {
+      .tag__row {
+        row-gap: 3rem;
+        --bs-gutter-x: 2.5rem;
+
+        .appointment__tag {
+          position: relative;
+          cursor: pointer;
+          img {
+            width: 100%;
+            @include lg {
+              aspect-ratio: 1/1;
+              object-fit: cover;
+            }
+            @include md {
+              aspect-ratio: unset;
+            }
+            @include xs {
+              aspect-ratio: 1/1;
+            }
+          }
+          .tag__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: max-content;
+            z-index: 999;
+            @include lg {
+              width: inherit;
+            }
+            h3 {
+              color: $color-light;
+              font-family: $font-primary;
+              margin-top: 1rem;
+            }
+          }
+          svg {
+            padding: 2rem;
+            font-size: 2rem;
+            border-radius: 3rem;
+            background-color: $color-light;
+            color: $color-primary;
+          }
+
+          position: relative;
+          z-index: 999;
+          &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #396cf0;
+            // z-index: -1;
+            opacity: 0.8;
+          }
+        }
+        .tag__orange {
+          &::after {
+            background-color: #ff4555;
+          }
+        }
+      }
+      .appointment__row {
+        margin-top: 4rem;
+        .appointment__row {
+          border-bottom: 3px solid $color-dark-2a;
+          justify-content: center;
+          &__block {
+            padding: 4rem 3rem;
+            background-color: #fbfbfb;
+            @include md {
+              padding: 5rem 7rem;
+            }
+            @include sm {
+              padding: 3rem 1.6rem;
+              text-align: center;
+            }
+            &__content:not(:last-child) {
+              margin-bottom: 1rem;
+            }
+            &__heading {
+              font-weight: 600;
+              text-transform: uppercase;
+              border-bottom: 2px solid $color-primary;
+              display: inline-block;
+              margin-bottom: 3rem;
+              padding-bottom: 0.5rem;
+            }
+
+            &__doctors {
+              &:not(:last-child) {
+                margin-bottom: 20px;
+              }
+              .block__doctor {
+                border: 1px solid #70707033;
+                border-radius: 5rem;
+                padding: 0 2rem 0 0;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+                &:hover {
+                  background-color: $color-secondary;
+                  color: $color-light;
+                  border: 1px solid white;
+                  .block__doctor__info {
+                    border-right: 1px solid #ffffff;
+                    border-left: 1px solid #ffffff;
+                  }
+                }
+
+                &__info {
+                  border-right: 1px solid #70707033;
+                  border-left: 1px solid #70707033;
+                  padding: 0.5rem 1rem 0.5rem 1rem;
+                  padding-left: 10%;
+                  min-width: 60%;
+                  @include xs {
+                    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+                    max-width: 50%;
+                  }
+
+                  .doc-name {
+                    font-family: $font-secondary;
+                    margin-bottom: 10px;
+                    font-size: 1.6rem !important;
+                    @include xs {
+                      font-size: 1.4rem !important;
+                    }
+                  }
+                  p {
+                    font-size: 1.2rem;
+                    @include xs {
+                      font-size: 1rem !important;
+                    }
+                  }
+                }
+                &__view a {
+                  @include xs {
+                    font-size: 1.4rem !important;
+                    padding-left: 0.5rem;
+                  }
+                }
+              }
+            }
+
+            &__contact {
+              background: url("../images/appoinment/5.png");
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: 280px;
+              color: $color-light;
+              .block__contact {
+                p:first-child {
+                  font-size: 2rem;
+                  margin-bottom: 10px;
+                }
+              }
+            }
+            .transparent-btn {
+              margin-top: 30px !important;
+            }
+          }
+        }
+        .get__appoinment {
+          &__content {
+            padding-bottom: 3rem;
+            @include lg {
+              padding: 3rem 1.5rem;
+            }
+            @include sm {
+              padding: 0;
+            }
+            h4 {
+              @include sm {
+                text-align: center;
+              }
+            }
+            p {
+              @include sm {
+                text-align: justify;
+              }
+            }
+            .button-group {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              gap: 1rem;
+              margin: 3rem auto;
+              .transparent-btn-1 {
+                transition: 0.3s ease-in-out;
+                @include sm {
+                  width: 100%;
+                  margin: 0 auto;
+                }
+                &:hover {
+                  color: $color-light !important;
+                  background-color: $color-primary !important;
+                }
+              }
+            }
+          }
+          p {
+            line-height: 1.5;
+            color: $color-dark-2;
+          }
+          input {
+            padding: 1.3rem 2rem;
+            border: solid 1px $color-dark-2a;
+            background: #f3f2f2;
+            height: 5rem;
+            outline: none;
+            width: 100%;
+            &::placeholder {
+              color: #7070708f;
+              font-size: 1.6rem !important;
+              font-weight: 500;
+              line-height: 3;
+            }
+          }
+          .button-group {
+            justify-content: start;
+          }
+          .transparent-btn-1 {
+            padding: 1.5rem 2rem !important;
+            border-radius: unset;
+          }
+          .dropdown-toggle {
+            border-radius: unset;
+          }
+        }
+      }
+    }
+  }
+}
+
+//  APPONTMENT END
+
+// DEPARTMENT START
+
+.services__department {
+  padding: 10rem 0 !important;
+
+  @include sm {
+    padding: 6rem 0 !important;
+  }
+
+  .container {
+    max-width: 150rem !important;
+  }
+
+  .services__categories {
+    padding: 1rem 2rem;
+    .row {
+      row-gap: 2rem;
+    }
+
+    &__card {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      border-radius: 1rem;
+      background-color: $color-light;
+      transition: 0.3s ease-in-out;
+      box-shadow: 3px 3px 20px #396cf024;
+
+      @include sm {
+        flex-direction: column-reverse;
+        padding: 2rem;
+        margin: unset;
+        align-items: center;
+      }
+      .categories__card__content {
+        padding: 2rem;
+
+        @include sm {
+          text-align: center;
+          padding: unset;
+          border-right: none;
+          width: 100%;
+        }
+        .categories__card__title {
+          @include title-style(
+            1.6rem,
+            $font-secondary,
+            600,
+            $color-dark,
+            initial,
+            capitalize
+          );
+          padding-bottom: 0.5rem;
+          border-bottom: 2px solid $color-dark-2a;
+
+          @include sm {
+            text-align: center;
+          }
+        }
+
+        .categories__card__para {
+          padding: 1rem 0;
+          color: $color-dark-2;
+          line-height: 1.7;
+          text-transform: initial;
+        }
+        .categories__card__readMore {
+          font-weight: 600;
+          color: $color-dark-2;
+          font-size: 1.4rem;
+        }
+      }
+
+      .categories__card__icon {
+        padding: 2rem 2rem 0 2rem;
+        @include xl {
+          padding: 1.5rem;
+        }
+        @include sm {
+          padding: 0;
+          margin-bottom: 1rem;
+        }
+        img {
+          // width: 55px;
+          border: 2px solid $color-dark-2a;
+          border-radius: 1rem;
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
+// DEPARTMENT END
+
+// ABOUT US START
+.about__us {
+  padding-bottom: 10rem;
+  @include sm {
+    padding-bottom: 6rem;
+  }
+  .container {
+    box-shadow: 0px 6px 10px #00000020;
+    max-width: 1154px;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    @include xxl {
+      max-width: initial;
+    }
+    @include md {
+      box-shadow: unset;
+    }
+    @include sm {
+      padding-right: var(--bs-gutter-x, 1.5rem) !important;
+      padding-left: var(--bs-gutter-x, 1.5rem) !important;
+    }
+  }
+
+  .section_heading {
+    .title-2 {
+      text-align: left;
+      color: #8d8d8d;
+      font-family: $font-secondary;
+      @include md {
+        text-align: center;
+      }
+    }
+    .heading-1 {
+      text-align: left;
+      font-weight: 700;
+      @include md {
+        text-align: center;
+      }
+    }
+  }
+  .about__us__row {
+    padding: 4rem;
+    @include md {
+      padding: 0;
+      margin-bottom: 3rem;
+    }
+  }
+  .banner__button {
+    margin-top: 0;
+  }
+
+  .box__row {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid $color-dark-2a;
+    .facilities__box {
+      display: flex;
+      flex-direction: column;
+      padding: 4rem;
+
+      gap: 2rem;
+      @include lg {
+        align-items: center;
+        text-align: center;
+      }
+      .facilities__img {
+        width: 8rem;
+      }
+      h4 {
+        font-family: $font-primary !important;
+        color: #161658;
+        font-weight: 400;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        width: 80%;
+        font-size: 1.6rem;
+        color: $color-dark-2;
+        font-weight: 400;
+        @include sm {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .about__img {
+    position: relative;
+    // .about__img__1 {
+    //   margin-left: 10px;
+    // }
+    .play__btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+// ABOUT US END
+
+// OUR SPECIALIST DOCTORS START
+.doctors__slide {
+  padding: 10rem 0;
+  background-image: url("../images/home-v5/banner/1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 999;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #2954c5;
+    z-index: -1;
+    opacity: 0.8;
+  }
+  @include sm {
+    padding: 6rem 0 !important;
+  }
+  .section_heading {
+    .title-2 {
+      color: $color-light;
+    }
+    .heading-1 {
+      color: $color-light;
+    }
+  }
+  .swiper__one {
+    .doctors__slide__box {
+      .slide__box__single {
+        text-align: center;
+        display: inline-block;
+        .doctor-img {
+          margin: 0 auto;
+        }
+        .doctor__details {
+          h4 {
+            font-size: 2rem;
+            font-family: $font-primary;
+            text-transform: capitalize;
+            margin: 3rem 0 1.6rem 0;
+            font-weight: bold;
+            color: $color-light;
+          }
+          p {
+            color: $color-light;
+          }
+        }
+        .doctor__details__btn {
+          margin-top: 3rem;
+          &:hover {
+            background-color: $color-primary;
+            color: $color-light;
+          }
+        }
+      }
+    }
+    .slide-1__prev__next {
+      .slide-1__prev {
+        border: 1px solid $color-dark-2a;
+        background-color: $color-light;
+        padding: 1.5rem;
+        border-radius: 3rem;
+        &::after {
+          font-size: 1.2rem;
+          color: $color-primary;
+          font-weight: 900;
+        }
+
+        &:hover {
+          background-color: $color-primary;
+          &::after {
+            color: $color-light;
+          }
+        }
+      }
+      .slide-1__next {
+        background-color: $color-light;
+        padding: 1.5rem;
+        border-radius: 3rem;
+
+        &::after {
+          font-size: 1.2rem;
+          color: $color-primary;
+          font-weight: 900;
+        }
+        &:hover {
+          background-color: $color-primary;
+          &::after {
+            color: white;
+          }
+        }
+        @include sm {
+          display: none;
+        }
+      }
+      .slide-1__pagination {
+        position: unset;
+        display: none;
+        @include sm {
+          display: block;
+          margin-top: 3rem;
+        }
+      }
+    }
+    .swiper-pagination-bullet {
+      background: $color-light !important;
+    }
+  }
+}
+// OUR SPECIALIST DOCTORS END
+
+// SUCCESS COUNTER START
+.success__counter {
+  padding: 10rem 0;
+  @include sm {
+    padding: 6rem 0;
+  }
+  background-color: $color-primary;
+  .success__counter__top {
+    text-align: center;
+    margin-bottom: 5rem;
+    .heading-2 {
+      font-size: 4rem;
+      font-weight: 600;
+    }
+  }
+  .success__counter__main {
+    .counter__row {
+      row-gap: 3rem;
+      --bs-gutter-x: 2.5rem;
+      @include sm {
+        row-gap: 1.5rem;
+        --bs-gutter-x: 1.5rem;
+      }
+      .counter__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 3rem 0;
+        width: 100% !important;
+        margin: 0 auto;
+        background: $color-light;
+        box-shadow: 0px 0px 40px #00000008;
+        .counter__icon {
+          font-size: 4rem;
+          width: 4rem;
+          background: $color-primary;
+          border-radius: 5rem;
+          padding: 2rem;
+          color: $color-light;
+          margin-bottom: 2rem;
+          @include sm {
+            font-size: 2rem;
+            width: 2rem;
+            padding: 2rem;
+          }
+        }
+        .counter__content {
+          .count__number {
+            color: $color-dark-2;
+            font-weight: 500;
+            margin-bottom: 2rem !important;
+            .count {
+              font-size: 1.8rem !important;
+            }
+          }
+          .counter__title {
+            color: $color-dark-2;
+            font-weight: 500;
+            font-family: $font-secondary;
+          }
+        }
+      }
+    }
+  }
+}
+// SUCCESS COUNTER END
+
+//  CALL TO ACTION START
+.call2action {
+  padding: 10rem 0;
+  @include lg {
+    padding: 6rem 0;
+  }
+  .section_heading {
+    font-family: $font-secondary;
+    position: relative;
+    aspect-ratio: 1/1;
+    padding-top: 25%;
+    @include xxl {
+      padding-top: 17%;
+    }
+    @include lg {
+      padding-top: 0;
+      aspect-ratio: unset;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      height: 70%;
+      width: 70%;
+      display: block;
+      top: 15%;
+      left: 15%;
+
+      transform: rotate(45deg);
+      box-shadow: 2px 2px 20px #00000010;
+      z-index: -1;
+      background: $color-light;
+      @include xl {
+        display: none;
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      height: 70%;
+      width: 70%;
+      display: block;
+      top: 15%;
+      left: 20%;
+      -webkit-transform: rotate(90deg);
+      transform: rotate(45deg);
+      box-shadow: 2px 2px 20px #00000010;
+
+      z-index: -5;
+
+      @include xl {
+        display: none;
+      }
+    }
+  }
+  // transform: rotate(45deg);
+  .heading-icon {
+    margin-bottom: 2rem;
+    svg {
+      padding: 1rem;
+      border-radius: 3rem;
+      background: $color-primary;
+      color: $color-light;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+  .title-3 {
+    color: $color-dark-2;
+  }
+  .heading-2 {
+    color: $color-dark;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  h6.heading-tag {
+    text-align: center;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 18px;
+  }
+
+  .heading-para {
+    width: 60%;
+
+    font-weight: 400;
+    @include sm {
+      width: 80%;
+    }
+  }
+  .call2action__img__col {
+    margin-top: 0.3rem;
+    position: relative;
+    .call2action__icon {
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      transform: translateY(-50%);
+      img {
+        @include sm {
+          max-width: 70%;
+        }
+      }
+    }
+  }
+}
+
+//  CALL TO ACTION END
+
+// GALLERY START
+.gallery {
+  background-image: url("../images/home-v5/banner/2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10rem 0;
+  position: relative;
+  z-index: 999;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #2954c5;
+
+    z-index: -1;
+    opacity: 0.8;
+  }
+  .section_heading {
+    margin-bottom: 2rem;
+
+    @include sm {
+      margin-bottom: 2rem;
+    }
+    .title-2 {
+      color: $color-light;
+      font-weight: 300;
+    }
+    .heading-1 {
+      color: $color-light;
+    }
+  }
+  @include sm {
+    padding: 6rem 0;
+  }
+  .gallery__row {
+    // display: none;
+    .button__group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 5rem;
+      gap: 1rem;
+      @include md {
+        margin-bottom: 2rem;
+      }
+      .button {
+        margin-bottom: 1rem;
+        display: inline-block;
+        padding: 1rem 2rem;
+        color: $color-light;
+        font-size: 1.6rem;
+        font-weight: 400;
+        border-radius: 3rem;
+        cursor: pointer;
+        text-transform: capitalize;
+        @include sm {
+          font-size: 1.2rem;
+          padding: 0.5rem 1rem;
+        }
+
+        &:active {
+          background-color: $color-light !important;
+          color: $color-primary !important;
+        }
+        &:hover {
+          background-color: $color-light !important;
+          color: $color-primary !important;
+        }
+      }
+      .is-checked {
+        background-color: $color-light !important;
+        color: $color-primary !important;
+      }
+    }
+    .grid {
+      float: left;
+      // margin-bottom: 20px;
+      margin: 0 auto;
+
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .element__item {
+        // position: relative;
+        float: left;
+        margin-bottom: 3rem;
+        width: 31.33%;
+        @include lg {
+          margin-bottom: 2rem;
+        }
+        @include md {
+          margin-bottom: 1.5rem;
+        }
+        @include sm {
+          width: 45%;
+        }
+        .element__item__img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .grid-sizer {
+        width: 31.33%;
+        @include sm {
+          width: 45%;
+        }
+      }
+      .gutter-sizer {
+        width: 3%;
+        @include sm {
+          width: 5%;
+        }
+      }
+    }
+  }
+}
+// GALLERY END
+
+//BLOG START
+.blog {
+  background-color: $color-light-1;
+  padding: 10rem 0;
+  @include sm {
+    padding: 6rem 0;
+  }
+  .section_heading {
+    margin-bottom: 4rem;
+  }
+  .blog__row {
+    row-gap: 3rem;
+    --bs-gutter-x: 2.5rem;
+
+    .blog__item {
+      background-color: $color-light;
+      @include sm {
+        text-align: center;
+        padding: 0;
+      }
+      .blog__item__content {
+        padding: 3rem 1.5rem;
+        padding-top: 3rem;
+
+        .blog__item__title {
+          font-size: 2rem;
+          font-weight: 500;
+          color: $color-dark;
+          font-family: $font-secondary;
+          white-space: unset !important;
+          line-height: 2rem;
+          @include sm {
+            font-size: 2rem;
+          }
+        }
+        .blog__item__para {
+          font-size: 1.4rem;
+
+          color: $color-dark-2;
+          padding: 1.5rem 0;
+          line-height: 2;
+          @include sm {
+            font-size: 1.2rem;
+          }
+        }
+        .blog__item__btn {
+          border-radius: 5rem;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+}
+// BLOG END
+
+// TESTIMONIALS START
+.testimonial__slide {
+  padding: 10rem 0;
+  @include sm {
+    padding: 6rem 0;
+  }
+  .testimonials_block {
+    margin-top: 13rem;
+    row-gap: 3rem;
+    --bs-gutter-x: 2.5rem;
+    @include lg {
+      margin-top: 0;
+    }
+    .swiper-wrapper {
+      height: auto;
+    }
+    .swiper__five {
+      margin-top: -12rem;
+      @include lg {
+        margin-top: unset;
+      }
+    }
+    .slide__box__single {
+      position: relative;
+      background: rgb(2, 0, 36);
+      background: linear-gradient(180deg, $color-light 22%, $color-primary 22%);
+      .slide__box__inner {
+        margin-top: 0;
+        // text-align: center;
+        @include xs {
+          margin: 0 2rem 0 2rem;
+        }
+
+        .client__words {
+          padding-top: 3rem;
+        }
+        .client__name {
+          font-weight: 400;
+        }
+        .client__tel {
+          color: $color-primary;
+          padding: 0.5rem;
+          background-color: $color-light;
+          border-radius: 3rem;
+        }
+      }
+    }
+    .doc__col {
+      margin: 0 0;
+
+      @include md {
+        padding: 0;
+      }
+    }
+    .doc__contact {
+      padding: 2rem;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+      @include lg {
+        justify-content: center;
+      }
+      @include xs {
+        padding: 1rem;
+      }
+    }
+
+    .doc__details {
+      padding-left: 2rem;
+    }
+
+    .doc__details h6 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #a1a1a1;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e6e6e6;
+      margin-bottom: 0.2rem;
+    }
+
+    .doc__details p {
+      color: $color-primary;
+      font-weight: 500;
+    }
+    .star-icon {
+      margin-top: 1rem;
+      svg {
+        color: #fed533;
+      }
+    }
+  }
+}
+// TESTIMONIALS END
+
+//  TAG-BANNER START
+.tag__banner__2 {
+  background: #57a3fd;
+  margin-top: unset !important;
+  min-height: unset;
+  .row {
+    // row-gap: 3rem;
+    --bs-gutter-x: 2.5rem;
+  }
+}
+//  TAG-BANNER END
+
+// CONTACT-US START
+.contact__us {
+  padding: 10rem 0;
+  @include sm {
+    padding: 6rem 0 !important;
+  }
+
+  .contact__us__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .contact__us__row {
+      @include sm {
+        --bs-gutter-x: 0;
+      }
+      row-gap: 5rem;
+      @include sm {
+        row-gap: 3rem;
+      }
+      .get__appointment {
+        padding: 3rem;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffffffd4;
+        border-radius: 3rem;
+        height: 100%;
+        border: 2rem solid #f7f7f7;
+
+        @include sm {
+          background-color: #ffffff69;
+          border: unset;
+          box-shadow: unset;
+          padding: 0;
+        }
+        .row {
+          @include sm {
+            & > * {
+              padding: 0;
+            }
+          }
+        }
+        .get__appointment__title {
+          padding: 2rem 0;
+          border-bottom: 1px solid $color-dark-2a;
+          margin-bottom: 2rem;
+          text-transform: uppercase;
+          color: $color-primary;
+          font-size: 1.6rem;
+          font-family: $font-secondary;
+          @include sm {
+            text-align: center;
+          }
+        }
+
+        input {
+          height: 5rem;
+          border-radius: 3rem;
+          margin-bottom: 1rem;
+          &::placeholder {
+            color: #7070708f;
+            font-size: 1.4rem;
+            font-weight: 500;
+            font-family: $font-secondary;
+          }
+        }
+
+        textarea {
+          height: 5rem;
+          border-radius: 3rem;
+          resize: none;
+          font-size: 2rem;
+          &::placeholder {
+            color: #7070708f;
+            font-size: 1.4rem;
+            font-weight: 500;
+            font-family: $font-secondary;
+          }
+        }
+        .form-control {
+          padding: 1.3rem 2rem;
+          border: solid 1px $color-dark-2a;
+          background: #f3f2f2;
+          &::placeholder {
+            color: #7070708f;
+            font-size: 1.4rem;
+            font-weight: 500;
+            font-family: $font-secondary;
+          }
+        }
+        input::-webkit-calendar-picker-indicator {
+          filter: invert(1) grayscale(1) contrast(0.5);
+        }
+        input::-webkit-datetime-edit {
+          color: #7070708f;
+        }
+        input:focus::-webkit-datetime-edit {
+          color: #7070708f;
+        }
+
+        .contact__us__btn {
+          border-radius: 3rem;
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+}
+// CONTACT-US END
+
+// FOOTER START
+.footer__three {
+  background-color: #202020;
+
+  .footer__logo {
+    color: $color-light;
+    margin-bottom: 2.8rem;
+  }
+  .footer__list {
+    .footer__gallery__info {
+      margin-bottom: 0 !important;
+      @include sm {
+        text-align: left !important;
+      }
+    }
+    .footer__img {
+      margin-bottom: 0 !important;
+    }
+  }
+  .social__icons__list {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    @include sm {
+      justify-content: center;
+    }
+    &__item {
+      svg {
+        color: $color-light;
+        width: 1.6rem;
+        background: #1f1b57 !important;
+        padding: 1rem;
+        border-radius: 2rem;
+        transition: 0.3s ease-in-out;
+      }
+      &:hover svg {
+        background: $color-secondary !important;
+      }
+    }
+  }
+  .footer__address {
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+  .footer__img {
+    img {
+      width: 130px !important;
+      @include sm {
+        width: 100px !important;
+      }
+    }
+  }
+  .footer__contact {
+    margin-bottom: 3rem;
+  }
+  .footer__gallery__info {
+    a {
+      font-size: 1.3rem !important;
+    }
+  }
+  .footer__icon svg {
+    margin-right: 1rem;
+  }
+  .footer__row__bottom {
+    row-gap: 2rem !important;
+  }
+}
+.copyright {
+  padding: 3rem 0;
+  background-color: #000000;
+  text-align: center;
+
+  font-family: $font-secondary;
+  span {
+    color: #c7c7c7;
+  }
+}
+// COPYRIGHTS END

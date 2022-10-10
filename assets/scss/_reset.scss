@@ -1,0 +1,92 @@
+html {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  line-height: 1.5rem;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+}
+
+form,
+label,
+input,
+select,
+button,
+textarea {
+  font: inherit;
+  font-size: 62.5%;
+  vertical-align: middle;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: none;
+  text-decoration: none;
+  color: inherit;
+  white-space: nowrap !important;
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  text-transform: unset;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+.row {
+  padding: 0px;
+}

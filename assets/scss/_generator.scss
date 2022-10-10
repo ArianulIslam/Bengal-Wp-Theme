@@ -1,0 +1,79 @@
+// button style
+@mixin button-style(
+  $color,
+  $padding,
+  $font_w,
+  $font_size,
+  $text-transform,
+  $bg-color,
+  $border,
+  $border-rad,
+  $display
+) {
+  color: $color;
+  padding: $padding;
+  font-weight: $font_w;
+  font-size: $font_size;
+  text-transform: $text-transform;
+  background-color: $bg-color;
+  border: $border;
+  border-radius: $border-rad;
+  display: $display;
+}
+
+// button variation
+
+// || title generator
+@mixin title-style(
+  $font-size,
+  $font-family,
+  $font-w,
+  $color,
+  $text-align,
+  $text-transform
+) {
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-w;
+  color: $color;
+  text-align: $text-align;
+  text-transform: $text-transform;
+}
+// title variation
+
+// || heading generator
+@mixin heading-style(
+  $font-size,
+  $font-family,
+  $font-w,
+  $color,
+  $text-align,
+  $text-transform
+) {
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-w;
+  color: $color;
+  text-align: $text-align;
+  text-transform: $text-transform;
+}
+
+// || paragraph generator
+
+@mixin para-style(
+  $font-size,
+  $font-family,
+  $font-w,
+  $color,
+  $text-align,
+  $text-transform,
+  $line-height
+) {
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-w;
+  color: $color;
+  text-align: $text-align;
+  text-transform: $text-transform;
+  line-height: $line-height;
+}

@@ -1,0 +1,315 @@
+//  HEADER 2 START
+.header-2 {
+  border-bottom: 1px solid $color-dark-2a;
+  .container {
+    max-width: 1700px !important;
+    // padding: 0 2rem;
+    margin: 0 auto;
+    .header-2__row {
+      .header-2__col {
+        @include lg {
+          display: none;
+        }
+      }
+    }
+  }
+  .header__top {
+    background: $color-secondary;
+
+    .header__top__block {
+      border-right: 1px solid $color-light;
+      border-left: 1px solid $color-light;
+      padding: 1.6rem 0;
+      @include sm {
+        justify-content: center !important;
+      }
+      select {
+        border: none;
+        font-size: 1.4rem;
+        width: fit-content;
+        background: transparent;
+        color: $color-light;
+        outline: none;
+        &::focus {
+          outline: none !important;
+          border: none;
+          box-shadow: none !important;
+        }
+      }
+      option {
+        font-size: 1.4rem;
+        background: $color-dark;
+      }
+      .flag-icon {
+        font-size: 1.4rem;
+        color: $color-light;
+      }
+      .header__top__right {
+        .header__icon {
+          svg {
+            color: $color-light;
+            font-size: 2rem;
+          }
+        }
+        @include sm {
+          display: none;
+        }
+      }
+    }
+  }
+
+  background-color: $color-light;
+  .header-2__row {
+    justify-content: space-between;
+    .header-2__info {
+      @include md {
+        justify-content: center !important;
+      }
+    }
+  }
+  .header-2__col {
+    @include xxl {
+      display: none;
+    }
+  }
+  .header-2_icon {
+    border: 1px solid $color-dark-2a;
+  }
+  .header-2__logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      @include sm {
+        width: 150px;
+      }
+    }
+    // @include lg {
+    //   justify-content: center !important;
+    // }
+    @include md {
+      justify-content: space-between !important;
+    }
+    .burger {
+      position: absolute;
+      right: 15px;
+    }
+  }
+  &__icon--style {
+    // font-size: 3rem;
+    padding: 1rem 1.2rem;
+
+    color: $color-secondary;
+    @include sm {
+      font-size: 1.6rem;
+    }
+  }
+  &__info__block {
+    gap: 1rem !important;
+    // @include xl {
+    //   display: none !important;
+    // }
+  }
+  .info__block__content {
+    font-size: 1.4rem;
+
+    color: #16407e;
+  }
+
+  &__info {
+    .nav-button {
+      .btn-2 {
+        border: none;
+        background-color: $color-secondary;
+        color: $color-light;
+      }
+      @include md {
+        display: none !important;
+      }
+    }
+  }
+}
+//  HEADER END
+
+// NAV START
+.nav {
+  width: 100%;
+  height: auto;
+  z-index: 10;
+  padding: 1rem 0;
+  margin: 0 auto;
+  background-color: $color-light;
+  @include lg {
+    padding: 1.5rem 0 1.8rem 0;
+  }
+
+  .navbar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 19;
+      opacity: 0;
+      visibility: hidden;
+      background-color: $color-dark-2;
+      transition: all 0.3s ease-in-out;
+      &.is-active {
+        display: block;
+        opacity: 0.8;
+        visibility: visible;
+      }
+    }
+    .navbar-menu {
+      position: relative;
+      // margin-left: -5px;
+      @include md {
+        flex-direction: column-reverse;
+      }
+
+      .menu {
+        // width: 100%;
+        // overflow: hidden;
+        @include md {
+          height: 0px;
+          transition: all 0.45s ease-in-out;
+          &.is-active {
+            height: 250px;
+          }
+        }
+        &-inner {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+          align-items: center;
+          height: 100%;
+          //   width: 50%;
+          column-gap: 3rem;
+
+          @include md {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 2rem 0 0 0;
+          }
+
+          .menu-link {
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: $color-dark-2;
+            text-transform: capitalize;
+            &:hover {
+              color: $color-secondary !important;
+            }
+            @include md {
+              font-size: 1.4rem;
+              font-weight: 500;
+              line-height: 2;
+              text-transform: uppercase;
+              transition: all 0.3s ease;
+              &:after {
+                content: "";
+              }
+            }
+          }
+        }
+      }
+
+      .nav-search {
+        @include md {
+          justify-content: end;
+          width: 100%;
+        }
+        .search-toggle {
+          display: block;
+          cursor: pointer;
+          color: $color-dark-2 !important;
+          padding: 1rem;
+          font-size: 1.2rem;
+          border: 1px solid $color-dark-2a;
+          border-radius: 3rem;
+        }
+        .search-icon {
+          padding-top: 0.5rem;
+          cursor: pointer;
+          font-size: 1.2rem;
+          cursor: pointer;
+          margin-right: 2rem;
+        }
+        .search-block {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 0;
+          opacity: 0;
+          display: flex;
+          align-items: center;
+          column-gap: 0.75rem;
+          height: 4.5rem;
+          max-height: 4rem;
+          z-index: 10;
+          overflow: hidden;
+          background-color: $color-light;
+          border: 1px solid $color-dark-2a;
+          transition: all 0.2s linear;
+          border-radius: 5rem;
+          @include md {
+            width: 55%;
+          }
+          @include md {
+            position: absolute;
+            visibility: unset;
+            opacity: unset;
+            width: 100%;
+            right: 0;
+          }
+          .search-cancel {
+            padding-top: 5px;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            cursor: pointer;
+            @include sm {
+              display: none;
+            }
+          }
+          .search-input {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 400;
+            width: 100%;
+            height: auto;
+            padding: 0.65rem 1.25rem;
+            border: none;
+            outline: none;
+            border-radius: 0.25rem;
+            color: $color-dark;
+            background-color: $color-light;
+          }
+        }
+        .is-open {
+          top: 0;
+          opacity: 1;
+          width: 25rem;
+          @include lg {
+            width: 23rem;
+          }
+          @include md {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .container {
+    max-width: 1700px !important;
+    // padding: 0 1rem;
+  }
+}
+// NAV END
